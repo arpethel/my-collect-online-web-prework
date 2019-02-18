@@ -1,11 +1,14 @@
 def my_collect(array)
   i = 0
 
+  my_arr = []
+
   while i < array.length
-    yield(array[i])
-    i = i + 1
+    block_given?
+    my_arr << yield(array[i])
+    i += 1
   end
-  array
+  my_arr
 end
 
 # students = ["Tim Jones", "Tom Smith", "Sophie Johnson", "Antoin Miller"]
